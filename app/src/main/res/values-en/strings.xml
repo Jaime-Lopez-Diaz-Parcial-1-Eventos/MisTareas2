@@ -17,4 +17,20 @@
     <string name="cambiar_idioma">Change Lenguages</string>
     <string name="activar_modo_oscuro">Night Mode</string>
     <string name="configuraci_n">Configuration</string>
+    <string name="back">Back</string>
+    <string name="task_details">Tasks Details</string>
+    <string name="task_list">Task List</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="task_register">Register Task</string>
+    <string name="task_name">Task Name</string>
+    <string name="task_description">Task Description</string>
+    <string name="task_date">Date:</string>
+    <string name="task_priority">Priority:</string>
+    <string name="task_cost">Cost:</string>
+    <string name="task_status">Status:</string>
+    <string name="register">Registrar</string>
+    <string name="cancel">Cancel</string>
+
+
 </resources>

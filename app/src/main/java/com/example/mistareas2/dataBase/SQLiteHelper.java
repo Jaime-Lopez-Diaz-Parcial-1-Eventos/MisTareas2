@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.example.mistareas2.dataBase.dao.TaskDao;
 import com.example.mistareas2.domain.Task;
 
-@Database(entities = {Task.class}, version = 1)
+@Database(entities = {Task.class}, version = 2)
 public abstract class SQLiteHelper extends RoomDatabase {
 
     private static SQLiteHelper instance;

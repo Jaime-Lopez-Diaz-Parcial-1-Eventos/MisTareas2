@@ -17,4 +17,20 @@
     <string name="cambiar_idioma">Cambiar Idioma</string>
     <string name="activar_modo_oscuro">Activar Modo Oscuro</string>
     <string name="configuraci_n">Configuración</string>
+    <string name="back">Volver</string>
+    <string name="task_details">Detalles de las Tareas</string>
+    <string name="task_list">Lista de Tareas</string>
+    <string name="navigation_drawer_open">Abrir menú de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú de navegación</string>
+    <string name="task_register">Registrar tareas</string>
+    <string name="task_name">Nombre de la tarea</string>
+    <string name="task_description">Descripción de la tarea</string>
+    <string name="task_date">Fecha:</string>
+    <string name="task_priority">Prioridad:</string>
+    <string name="task_cost">Coste:</string>
+    <string name="task_status">Estado:</string>
+    <string name="register">Register</string>
+    <string name="cancel">Cancel</string>
+
+
 </resources>

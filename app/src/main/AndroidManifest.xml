@@ -32,6 +32,14 @@
             android:name="com.example.mistareas2.activity.SettingsActivity"
             android:exported="false" />
 
+        <activity
+            android:name="com.example.mistareas2.activity.TaskDetailsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.mistareas2.activity.TaskRegistrationActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

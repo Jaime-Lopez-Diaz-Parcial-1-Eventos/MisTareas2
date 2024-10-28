@@ -1,22 +1,26 @@
 @startuml
-left to right direction
+
 actor Usuario
 
-rectangle Aplicación {
-    usecase "Añadir Tarea" as UC_AddTask
-    usecase "Ver Tareas Pendientes" as UC_ViewPending
-    usecase "Marcar Tarea como Hecha" as UC_MarkDone
-    usecase "Eliminar Tarea" as UC_DeleteTask
-    usecase "Ver Tareas Realizadas" as UC_ViewCompleted
-    usecase "Cambiar Idioma" as UC_ChangeLanguage
-    usecase "Cambiar Modo" as UC_ToggleNightMode
+rectangle "Sistema de Gestión de Tareas" {
+    usecase "Registrar Tarea" as UC_Registrar
+    usecase "Ver Lista de Tareas" as UC_VerLista
+    usecase "Ver Detalles de la Tarea" as UC_VerDetalles
+    usecase "Eliminar Tarea" as UC_Eliminar
+    usecase "Completar Tarea" as UC_Completar
+    usecase "Actualizar Configuración" as UC_ActualizarConfig
 }
 
-Usuario --> UC_AddTask
-Usuario --> UC_ViewPending
-Usuario --> UC_MarkDone
-Usuario --> UC_DeleteTask
-Usuario --> UC_ViewCompleted
-Usuario --> UC_ChangeLanguage
-Usuario --> UC_ToggleNightMode
+Usuario --> UC_Registrar
+Usuario --> UC_VerLista
+Usuario --> UC_VerDetalles
+Usuario --> UC_Eliminar
+Usuario --> UC_Completar
+Usuario --> UC_ActualizarConfig
+
+UC_Registrar --> UC_VerLista : "Refrescar Lista"
+UC_VerLista --> UC_VerDetalles : "Seleccionar Tarea"
+UC_VerDetalles --> UC_Eliminar : "Eliminar Tarea"
+UC_VerLista --> UC_Completar : "Marcar Tarea como Completada"
+
 @enduml

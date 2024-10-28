@@ -1,81 +1,85 @@
 @startuml
 
-abstract class Activity
-interface TaskActionListener
-interface DatabaseHelper
+package com.example.mistareas2 {
 
-TaskActionListener <|-- TaskAdapter
-Activity <|-- MainActivity
-Activity <|-- SettingsActivity
-DatabaseHelper <|-- SQLiteHelper
+    class MainActivity {
+        - FirebaseFirestore firebaseDB
+        - SQLiteHelper sqliteHelper
+        - TaskDao taskDao
+        - List<Task> taskList
+        - TaskAdapter taskAdapter
+        - boolean showingPendingTasks
+        - ExecutorService executorService
+        + onCreate(Bundle)
+        + loadTasks()
+        + addNewTask()
+        + deleteTask(Task task)
+        + markTaskAsDone(Task task)
+    }
 
-class MainActivity {
-    - firebaseDB : FirebaseFirestore
-    - sqliteHelper : SQLiteHelper
-    - taskDao : TaskDao
-    - taskList : List<Task>
-    - taskAdapter : TaskAdapter
-    - showingPendingTasks : boolean
-    - etNewTask : EditText
-    - btnAddTask : Button
-    - btnPendingTasks : Button
-    - btnCompletedTasks : Button
-    - btnSettings : Button
-    - taskListView : ListView
-    - drawerLayout : DrawerLayout
-    - toolbar : Toolbar
-    + onCreate(Bundle) : void
-    - loadThemePreference() : void
-    - setAppTheme(boolean) : void
-    - addNewTask() : void
-    - loadTasks() : void
-    - deleteTask(Task) : void
-    - markTaskAsDone(Task) : void
-    + onBackPressed() : void
+    class TaskRegistrationActivity {
+        - FirebaseFirestore firebaseDB
+        + onCreate(Bundle)
+        + registerTask()
+    }
+
+    class TaskDetailsActivity {
+        - FirebaseFirestore firebaseDB
+        + onCreate(Bundle)
+        + loadTaskDetails(String taskId)
+    }
+
+    class SettingsActivity {
+        - SharedPreferences sharedPreferences
+        + onCreate(Bundle)
+    }
+
+    class TaskAdapter {
+        - List<Task> taskList
+        + onCreateViewHolder()
+        + onBindViewHolder()
+        + getItemCount()
+    }
+
+    class SQLiteHelper {
+        - static SQLiteHelper instance
+        + getInstance(Context context)
+    }
+
+    class TaskDao {
+        + addTask(Task task)
+        + updateTask(Task task)
+        + deleteTask(Task task)
+        + getTasks(boolean isCompleted)
+    }
+
+    class Task {
+        - String id
+        - String name
+        - String description
+        - String date
+        - String priority
+        - double cost
+        - boolean isCompleted
+        + getId()
+        + getName()
+        + getDescription()
+        + getDate()
+        + getPriority()
+        + getCost()
+        + isCompleted()
+    }
 }
 
-class SettingsActivity {
-    - PREFS_NAME : String
-    - KEY_DARK_MODE : String
-    - KEY_LANGUAGE : String
-    - switchDarkMode : Switch
-    - switchLanguage : Switch
-    + onCreate(Bundle) : void
-    - loadThemePreference() : void
-    - setAppTheme(boolean) : void
-    - setAppLanguage(String) : void
-}
-
-class TaskAdapter {
-    - listener : TaskActionListener
-    + TaskAdapter(Context, List<Task>, TaskActionListener)
-    + getView(int, View, ViewGroup) : View
-}
-
-class SQLiteHelper {
-    + getInstance(Context) : SQLiteHelper
-    + taskDao() : TaskDao
-}
-
-class TaskDao {
-    + addTask(Task) : void
-    + getTasks(boolean) : List<Task>
-    + deleteTask(Task) : void
-    + updateTask(Task) : void
-}
-
-class Task {
-    - id : String
-    - description : String
-    - completed : boolean
-    + getId() : String
-    + getDescription() : String
-    + isCompleted() : boolean
-    + setId(String) : void
-    + setDescription(String) : void
-    + setCompleted(boolean) : void
-}
-
-TaskAdapter -[HIDDEN]--> Task
+MainActivity --> TaskRegistrationActivity : "Open"
+MainActivity --> TaskDetailsActivity : "Open"
+MainActivity --> SettingsActivity : "Open"
+MainActivity --> TaskAdapter : "Displays list using"
+MainActivity --> TaskDao : "CRUD operations"
+MainActivity --> SQLiteHelper : "Database helper"
+TaskRegistrationActivity --> Task : "Creates"
+TaskDetailsActivity --> Task : "Displays"
+TaskDao --> Task : "CRUD operations on"
+SQLiteHelper --> TaskDao : "Provides"
 
 @enduml
