@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colores principales para el modo oscuro -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>       <!-- Ajusta si es necesario -->
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+
+    <!-- Colores personalizados -->
+    <color name="backgroundColor">#121212</color> <!-- Fondo oscuro -->
+    <color name="textColor">#FFFFFF</color>       <!-- Texto blanco -->
+
+    <!-- Colores primarios -->
+    <color name="colorPrimary">@color/purple_200</color>
+    <color name="colorPrimaryDark">@color/purple_700</color>
+    <color name="colorAccent">@color/teal_200</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

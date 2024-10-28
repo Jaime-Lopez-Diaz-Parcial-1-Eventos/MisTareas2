@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+actor Usuario
+
+rectangle Aplicación {
+    usecase "Añadir Tarea" as UC_AddTask
+    usecase "Ver Tareas Pendientes" as UC_ViewPending
+    usecase "Marcar Tarea como Hecha" as UC_MarkDone
+    usecase "Eliminar Tarea" as UC_DeleteTask
+    usecase "Ver Tareas Realizadas" as UC_ViewCompleted
+    usecase "Cambiar Idioma" as UC_ChangeLanguage
+    usecase "Cambiar Modo" as UC_ToggleNightMode
+}
+
+Usuario --> UC_AddTask
+Usuario --> UC_ViewPending
+Usuario --> UC_MarkDone
+Usuario --> UC_DeleteTask
+Usuario --> UC_ViewCompleted
+Usuario --> UC_ChangeLanguage
+Usuario --> UC_ToggleNightMode
+@enduml

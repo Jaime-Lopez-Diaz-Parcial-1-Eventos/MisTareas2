@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -33,6 +34,17 @@ android {
 
 dependencies {
 
+    implementation(libs.firebase.analytics)
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-auth")
+    implementation ("com.google.firebase:firebase-storage")
+    implementation (libs.room.runtime)
+    annotationProcessor (libs.androidx.room.compiler)
+    compileOnly (libs.org.projectlombok.lombok)
+    annotationProcessor (libs.org.projectlombok.lombok)
+    implementation(libs.recyclerview)
     implementation(libs.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)

@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">MisTareas2</string>
+    <string name="app_name">Lista De Tareas</string>
+    <string name="add_task">Añadir Tarea</string>
+    <string name="enter_task_description">Introducir Descripción</string>
+    <string name="pending_tasks">Tareas Pendientes</string>
+    <string name="completed_tasks">Tareas Completadas</string>
+    <string name="settings">Configuración</string>
+    <string name="marcar_como_hecha">Marcar como Hecha</string>
+    <string name="completada">Completada</string>
+    <string name="eliminar_tarea">Eliminar Tarea</string>
+    <string name="configuracion">Configuración</string>
+    <string name="menu">Menú</string>
+    <string name="dark_mode_enabled">Modo oscuro activado</string>
+    <string name="light_mode_enabled">Modo claro activado</string>
+    <string name="language_changed_es">Idioma cambiado a Español</string>
+    <string name="language_changed_en">Idioma cambiado a Inglés</string>
+    <string name="cambiar_idioma">Cambiar Idioma</string>
+    <string name="activar_modo_oscuro">Activar Modo Oscuro</string>
+    <string name="configuraci_n">Configuración</string>
 </resources>
